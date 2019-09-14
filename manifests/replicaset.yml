@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: phippy-replicaset
+  labels:
+    app: phippy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: phippy
+  template:
+    metadata:
+      labels:
+        app: phippy
+    spec:
+      containers:
+      - name: phippy
+        image: shashankbarsin/phippy
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
