@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: phippy
+  name: smart-phippy
   labels:
     app: phippy
 spec:
@@ -11,3 +11,9 @@ spec:
     imagePullPolicy: Always
     ports:
     - containerPort: 80
+    env:
+      - name: NAME
+        valueFrom:
+          secretKeyRef:
+            name: phippy
+            key: name
