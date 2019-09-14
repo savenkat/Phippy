@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: phippy-replicaset
+  name: phippy
   labels:
     app: phippy
 spec:
